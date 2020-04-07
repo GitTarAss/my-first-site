@@ -1,0 +1,381 @@
+html {
+    font-size: 15px; /* розмір шрифта по замовчуванню для усього документа */
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6rem; /* устанавливает величину пространства между строками, */
+    }
+*,
+*:before,
+*:after {
+    box-sizing: border-box;  /* враховувати padding в середину длока - не міняючи його розмірів */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.conteiner {
+    width: 100%;
+    max-width: 1030px;  /* максимальна ширина блока */
+    margin: 0 auto; /* вирівнювання по центру відступами */
+    padding: 0 1rem;
+}
+
+/* Page ===================*/
+
+.page {
+    width: 100%;
+    height: 100vh; /* щоб відображати сторінку на висоту першого екрану. (Висота вікна 100vh ширина 100vw) */
+    min-height: 560px;
+    position: relative; /*Положение элемента устанавливается относительно его исходного места (Добавление свойств left, top, right и bottom)*/
+    overflow: hidden; /* Свойство overflow управляет отображением содержания блочного элемента, если оно целиком не помещается и выходит за область заданных размеров.*/
+
+    background: url("../img/bg.jpg") center no-repeat; /* Використовуємо для фона сайта картинку, розміщоємо її по центру, забороняємо повтори */
+    background-size: cover; /* щоб картинка займала весь простір блока (Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.) */
+}
+
+/* Header ================*/
+
+.header {
+    padding: 1rem 0; /*відступи з верху і з низу 15рх з право і ліво нуль*/
+    background: #2b7ded;
+    margin-bottom: 110px;
+}
+
+.header-inner {
+    display: flex;  /* модуль макета гибкого контейнера — представляет собой способ компоновки элементов */
+    justify-content: space-between; /* определяет как браузер распределяет пространство между и вокруг флекс элементов вдоль главной оси контейнера (горизонтально) */
+    align-items: center; /* Свойство align-items выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении */
+}
+
+.header-brend {
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: uppercase; /*всі букти великі (капслок)*/
+    font-weight: 700;
+}
+
+.header-logo img {
+    display: block; /*забираєм відступи і робим картинку блочною*/
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-link {
+    margin-left: 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500; /*розмір шрифта*/
+    text-decoration: none; /*забрати стилі по замовчуванню у посилань*/
+    transition: color .2s linear; /*плавна зміна кольору посилання при наводі 0,2сек*/
+}
+
+.header-nav-link:hover {
+    color: #b2e3fd; /*міняти колір при наведенні*/
+}
+
+.header-nav-link.active {
+    position: relative; /*Положение элемента устанавливается относительно его исходного места*/
+}
+
+.header-nav-link.active:after {
+    content: ""; /*щоб створити полоску*/
+    width: 100%;
+    height: 2px;
+
+    background-color: #fff;
+
+    position: absolute; /*Указывает, что элемент абсолютно позиционирован*/
+    left: 0;
+    bottom: -5px;
+}
+
+/* Content ===================*/
+
+.content {
+    height: 100%;
+    width: 100%; /* для того щоб коректно працювала адаптивна верстка*/
+    max-width: 565px; /* для того щоб коректно працювала адаптивна верстка потрібно вказувати не width a max-width*/
+}
+
+.content-header {
+    margin-bottom: 35px;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, .6);
+    font-weight: 300;
+}
+
+.title {
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.2; /* висота мыж строками */
+}
+
+.title span {
+    color: #2b7ded;
+}
+
+.text {
+    margin-bottom: 50px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Btn ===================*/
+
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.1; /* величина пространства между строками*/
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+
+    cursor: pointer; /* змінити курсор при наведенні на кнопку на руку */
+    border: 0;
+    background-color: #2b7ded;
+    border-radius: 5px;
+
+    transition: background .2s linear; /*плавна зміна кольору посилання при наводі 0,2сек*/
+}
+
+.btn:hover {
+    background-color: #0865e5;
+}
+
+.btn-full {
+    display: block;
+    width: 100%;
+}
+
+/* Author ===================*/
+
+.author {
+    position: absolute;
+
+    right: 20px;
+    bottom: 0;
+}
+
+/* Footer ===================*/
+
+.footer {
+    width: 100%
+        ;
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+}
+
+/* Contacts ===================*/
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.contacts-link {
+    margin-right: 2rem;
+
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contacts-link:hover {
+    text-decoration: underline;
+}
+
+.contacts-link:last-child {
+    margin-right: 0;
+    position: relative; /* Относительное позиционирование */
+}
+
+.contacts-link:last-child:after {
+    content: ""; /* Выводим пустой блок */
+    display: block; /* Элемент показывается как блочный */
+    width: 80px;
+    height: 2px;
+    margin-left: 2rem;
+
+    background-color: #fff;
+    pointer-events: none; /* Не реагирует на мышь */
+
+    position: absolute; /* Абсолютное позиционирование */
+    left: 100%;
+    top: 11px;
+}
+
+.contacts-icon {
+    margin-right: 0.5rem;
+}
+
+/* Form ===================*/
+
+.form {
+    width: 100%;
+    max-width: 280px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input,
+.textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+
+    font-family: inherit; /* Наследовать шрифт родителей (рядок 7 -> Montserrat) */
+    font-size: 1rem;
+    color: #fff;
+
+    border: 0;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.textarea {
+    height: 100px;
+    resize: none;
+}
+
+.input::placeholder,
+.textarea::placeholder{ /* через двійні двокрапки міняэмо в формі колір placeholder */
+    color: #fff;
+}
+
+/* Media ===================*/
+
+@media (max-width: 1024px) {
+    .author {
+        right: -2rem;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .author {
+        right: -170px;
+    }
+
+}
+
+@media (max-width: 812px) {
+    .author {
+        right: -250px;
+    }
+}
+
+
+@media (max-width: 767px) { /* для устройств (браузеров), которое менше 767px исполнять следующие правила */
+
+    .page {
+        min-height: 100vh; /* Мінімальна висота 100% першоо екрана, але якщо більше то потрібно доповнити правилом auto.*/
+        height: auto; /* При адаптивному дизайні міняти висоту під пристрій автоматично */
+        padding-bottom: 2rem;
+    }
+
+    .header {
+        margin-bottom: 50px;
+    }
+
+    .header-logo {
+        display: none;
+    }
+
+    .header-brend {
+        font-size: 1.2rem;
+    }
+
+    /* Content */
+
+    .content {
+        max-width: none;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    /* Form */
+
+    .form {
+        margin: 0 auto;
+    }
+
+    /* Footer */
+
+    .footer {
+        position: static; /* скасовує absolute позиціонування. Элементы отображаются как обычно. Использование свойств left, top, right и bottom не приводит к каким-либо результатам. */
+    }
+
+     /* Contacts */
+
+    .contacts {
+        flex-direction: column;
+    }
+
+    .contacts-link {
+        margin-right: 0;
+        margin-bottom: .5rem;
+    }
+
+    .contacts-link:last-child {
+        margin-bottom: 0;
+    }
+
+    .contacts-link:last-child:after {
+        display: none;
+    }
+
+    .author {
+        display: none;
+    }
+
+}
+
+@media (max-width: 565px) {
+
+    /* Header */
+
+    .header-inner {
+        flex-direction: column; /* Свойство flex-direction задаёт направление основных осей в контейнере. column - Главная ось располагается вертикально и направлена сверху вниз. */
+    }
+
+    .header-brand {
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+}
+
